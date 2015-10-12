@@ -1,3 +1,6 @@
+/**
+* This file is automatically generate with grunt sprity
+*/
 {{#each layouts}}
   {{#each layout.items}}
     ${{#if ../../opt.split}}{{cssesc ../../name}}-{{/if}}{{cssesc meta.name}}: -{{baseDim x}}px -{{baseDim y}}px {{baseDim width}}px {{baseDim height}}px;
@@ -52,4 +55,15 @@
     {{/if}}
   {{/each}}
 
+{{/each}}
+{{#each layouts}}
+  {{#each layout.items}}
+    .{{#if ../../opt.split}}{{cssesc ../../name}}-{{/if}}{{cssesc meta.name}}{
+        @extend {{../../indicator}}{{cssesc ../classname}};
+        background-position: -{{baseDim x}}px -{{baseDim y}}px;
+        width: {{baseDim width}}px;
+        height: {{baseDim height}}px;
+
+    }
+  {{/each}}
 {{/each}}
